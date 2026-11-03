@@ -12,11 +12,38 @@
     });
 
   // ---- side rails: fill with doodle tiles (twice, so the loop is seamless) ----
-  const ICONS = ["bars", "db", "mag", "pie", "sigma", "line", "mug", "table", "scatter", "shield", "laptop", "pencil"];
+  // Each tile is a link. Left rail: projects and sections. Right rail: ways to reach me.
+  const RAILS = [
+    [
+      ["shield", "Aegis: fraud detection", "https://github.com/goofydynamite/aegis-aml-detection"],
+      ["line", "Bitcoin live dashboard", "https://goofydynamite.github.io/btc-market-analysis/"],
+      ["mag", "Hippocrates on Tableau", "https://public.tableau.com/app/profile/deepti.singh.kushwaha/viz/HippocratesTrialScout/TrialScout"],
+      ["bars", "Zomato BI pipeline", "https://github.com/goofydynamite/Automated-Business-Intelligence-Dashboard-for-Zomato"],
+      ["table", "Netflix SQL", "https://github.com/goofydynamite/netflix_sql"],
+      ["scatter", "AI job trends", "https://github.com/goofydynamite/ai-job-trends-2025"],
+      ["sigma", "A/B testing", "https://github.com/goofydynamite/Digitial-marketing-a-b-testing"],
+      ["pie", "all my work", "#work"],
+      ["mug", "about me", "#about"],
+    ],
+    [
+      ["linkedin", "LinkedIn", "https://www.linkedin.com/in/deepti-s-27a1b3158"],
+      ["github", "GitHub", "https://github.com/goofydynamite"],
+      ["mail", "email me", "mailto:deepti.sngh.kushwaha@gmail.com"],
+      ["db", "Tableau Public", "https://public.tableau.com/app/profile/deepti.singh.kushwaha"],
+      ["doc", "my resume", "assets/Deepti_Singh_Kushwaha_Resume.pdf"],
+      ["pencil", "certificates", "#certs"],
+      ["laptop", "say hi", "#contact"],
+    ],
+  ];
   document.querySelectorAll(".rail__track").forEach((track, k) => {
-    const order = k ? [...ICONS].reverse() : ICONS;
-    const html = order.map((n) => `<div class="tile"><svg><use href="#i-${n}"/></svg></div>`).join("");
-    track.innerHTML = html + html;
+    const html = RAILS[k].map(([icon, label, href]) => {
+      const ext = /^https?:/.test(href);
+      const cls = icon === "doc" ? " js-resume" : "";
+      return `<a class="tile${cls}" href="${href}"${ext ? ' target="_blank" rel="noopener"' : ""} aria-label="${label}">`
+        + `<svg aria-hidden="true"><use href="#i-${icon}"/></svg><span class="tile__tip">${label}</span></a>`;
+    }).join("");
+    // three copies so the loop never shows a gap; only the first copy is reachable by keyboard
+    track.innerHTML = html + html.replace(/<a /g, '<a tabindex="-1" aria-hidden="true" ') + html.replace(/<a /g, '<a tabindex="-1" aria-hidden="true" ');
   });
 
   // ---- cutting-mat rulers ----
@@ -33,19 +60,34 @@
   gsap.registerPlugin(ScrollTrigger);
 
   // ---- rails drift on their own, and run faster while you scroll ----
-  const rails = gsap.utils.toArray(".rail__track").map((t, k) => {
-    const tween = gsap.fromTo(t, { yPercent: k ? -50 : 0 }, { yPercent: k ? 0 : -50, duration: 40, ease: "none", repeat: -1 });
-    return tween;
-  });
-  let boost = 1;
+  const third = -100 / 3;
+  const rails = gsap.utils.toArray(".rail__track").map((t, k) =>
+    gsap.fromTo(t, { yPercent: k ? third : 0 }, { yPercent: k ? 0 : third, duration: 40, ease: "none", repeat: -1 }));
+  let boost = 1, hovering = false;
+  const setSpeed = () => rails.forEach((t) => t.timeScale(hovering ? 0 : boost));
   ScrollTrigger.create({
-    onUpdate: (self) => {
-      boost = 1 + Math.min(Math.abs(self.getVelocity()) / 220, 9);
-      rails.forEach((t) => t.timeScale(boost));
-    },
+    onUpdate: (self) => { boost = 1 + Math.min(Math.abs(self.getVelocity()) / 220, 9); setSpeed(); },
   });
-  gsap.ticker.add(() => {
-    if (boost > 1) { boost = Math.max(1, boost * 0.93); rails.forEach((t) => t.timeScale(boost)); }
+  gsap.ticker.add(() => { if (boost > 1) { boost = Math.max(1, boost * 0.93); setSpeed(); } });
+
+  // pause a rail while the pointer is on it, and show a handwritten label next to the hovered tile
+  const tip = document.querySelector(".rail-tip");
+  document.querySelectorAll(".rail").forEach((rail) => {
+    rail.addEventListener("mouseenter", () => { hovering = true; setSpeed(); });
+    rail.addEventListener("mouseleave", () => { hovering = false; setSpeed(); gsap.to(tip, { opacity: 0, duration: 0.15 }); });
+  });
+  const showTip = (tile) => {
+    const r = tile.getBoundingClientRect(), right = tile.closest(".rail--r");
+    tip.textContent = tile.getAttribute("aria-label");
+    tip.classList.toggle("rail-tip--r", !!right);
+    const x = right ? r.left - 12 : r.right + 12;
+    gsap.set(tip, { left: x, top: r.top + r.height / 2, xPercent: right ? -100 : 0, yPercent: -50 });
+    gsap.fromTo(tip, { opacity: 0, x: right ? 8 : -8 }, { opacity: 1, x: 0, duration: 0.2 });
+  };
+  document.querySelectorAll(".tile").forEach((t) => {
+    t.addEventListener("mouseenter", () => showTip(t));
+    t.addEventListener("focus", () => { hovering = true; setSpeed(); showTip(t); });
+    t.addEventListener("blur", () => { hovering = false; setSpeed(); gsap.to(tip, { opacity: 0, duration: 0.15 }); });
   });
 
   // ---- hero: page drops in, chart sketches itself ----

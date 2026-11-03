@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Courier+Prime&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Manrope:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F4EDE1'/%3E%3Cpath d='M5 24 L11 17 L16 20 L22 9 L27 12' fill='none' stroke='%232B4C7E' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='22' cy='9' r='5' fill='none' stroke='%23D9472B' stroke-width='1.8'/%3E%3C/svg%3E" />
 </head>
 <body>
@@ -29,11 +29,16 @@
     <symbol id="i-shield" viewBox="0 0 48 48"><path d="M24 6 L38 12 V24 C38 33 31 39 24 42 C17 39 10 33 10 24 V12 Z" /><path d="M18 24 L23 29 L31 19" /></symbol>
     <symbol id="i-laptop" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="20" rx="2" /><path d="M5 36 H43 L39 30 H9 Z" /><path d="M14 25 L19 20 L23 23 L30 15" /></symbol>
     <symbol id="i-pencil" viewBox="0 0 48 48"><path d="M10 38 L12 30 L33 9 L39 15 L18 36 Z M29 13 L35 19 M10 38 L18 36" /></symbol>
+    <symbol id="i-github" viewBox="-6 -6 36 36"><path fill="currentColor" stroke="none" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="34" rx="7" /><path d="M16 21 V33 M16 15.5 V16 M23 33 V21 M23 26 C23 22 33 19 33 26 V33" /></symbol>
+    <symbol id="i-mail" viewBox="0 0 48 48"><rect x="6" y="12" width="36" height="25" rx="3" /><path d="M7 14 L24 27 L41 14" /></symbol>
+    <symbol id="i-doc" viewBox="0 0 48 48"><path d="M12 6 H29 L37 14 V42 H12 Z M29 6 V14 H37" /><path d="M18 22 H31 M18 28 H31 M18 34 H26" /></symbol>
   </svg>
 
   <!-- side rails of doodle tiles (desktop) -->
-  <div class="rail rail--l" aria-hidden="true"><div class="rail__track"></div></div>
-  <div class="rail rail--r" aria-hidden="true"><div class="rail__track"></div></div>
+  <nav class="rail rail--l" aria-label="Projects"><div class="rail__track"></div></nav>
+  <nav class="rail rail--r" aria-label="Find me"><div class="rail__track"></div></nav>
+  <div class="rail-tip hand" aria-hidden="true"></div>
 
   <header class="nav">
     <a class="nav__logo" href="#top">deepti<span>.</span></a>
@@ -291,6 +296,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="main.js"></script>
+  <script src="main.js?v=3"></script>
 </body>
 </html>

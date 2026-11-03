@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deepti Singh Kushwaha · Data Analyst</title>
+  <meta name="description" content="Data analyst in Bangalore. Anti-money-laundering models, market intelligence and clinical-trial matching, from messy data to decisions." />
+  <meta property="og:title" content="Deepti Singh Kushwaha · Data Analyst" />
+  <meta property="og:description" content="An analyst's notebook: messy data in, decisions out." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Courier+Prime&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Manrope:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23F4EDE1'/%3E%3Cpath d='M5 24 L11 17 L16 20 L22 9 L27 12' fill='none' stroke='%232B4C7E' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='22' cy='9' r='5' fill='none' stroke='%23D9472B' stroke-width='1.8'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <!-- sketch filter + doodle sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="rough" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" result="n" /><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" /></filter>
+    <symbol id="i-bars" viewBox="0 0 48 48"><path d="M7 40 H41" /><rect x="10" y="26" width="6" height="14" rx="1" /><rect x="19" y="16" width="6" height="24" rx="1" /><rect x="28" y="22" width="6" height="18" rx="1" /><rect x="37" y="10" width="6" height="30" rx="1" /></symbol>
+    <symbol id="i-pie" viewBox="0 0 48 48"><circle cx="24" cy="24" r="15" /><path d="M24 24 V9 M24 24 L37 31" /></symbol>
+    <symbol id="i-line" viewBox="0 0 48 48"><path d="M7 38 L17 27 L25 32 L40 13" /><circle cx="40" cy="13" r="3" /><path d="M7 8 V41 H42" /></symbol>
+    <symbol id="i-scatter" viewBox="0 0 48 48"><circle cx="12" cy="34" r="2" /><circle cx="18" cy="28" r="2" /><circle cx="22" cy="31" r="2" /><circle cx="27" cy="24" r="2" /><circle cx="31" cy="27" r="2" /><circle cx="38" cy="10" r="2.5" /><circle cx="38" cy="10" r="7" /></symbol>
+    <symbol id="i-db" viewBox="0 0 48 48"><ellipse cx="24" cy="11" rx="13" ry="5" /><path d="M11 11 V36 C11 42 37 42 37 36 V11 M11 23.5 C11 29.5 37 29.5 37 23.5" /></symbol>
+    <symbol id="i-mag" viewBox="0 0 48 48"><circle cx="20" cy="20" r="11" /><path d="M28 28 L40 40" /><path d="M14 23 L18 18 L21 21 L26 15" /></symbol>
+    <symbol id="i-sigma" viewBox="0 0 48 48"><path d="M35 10 H13 L26 24 L13 38 H35" /></symbol>
+    <symbol id="i-table" viewBox="0 0 48 48"><rect x="7" y="10" width="34" height="28" rx="2" /><path d="M7 18 H41 M7 26 H41 M19 10 V38" /></symbol>
+    <symbol id="i-mug" viewBox="0 0 48 48"><path d="M11 17 H32 V34 C32 38 28 41 21.5 41 C15 41 11 38 11 34 Z M32 21 C40 21 40 31 32 31" /><path d="M17 11 C15 8 19 6 17 3 M25 11 C23 8 27 6 25 3" /></symbol>
+    <symbol id="i-shield" viewBox="0 0 48 48"><path d="M24 6 L38 12 V24 C38 33 31 39 24 42 C17 39 10 33 10 24 V12 Z" /><path d="M18 24 L23 29 L31 19" /></symbol>
+    <symbol id="i-laptop" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="20" rx="2" /><path d="M5 36 H43 L39 30 H9 Z" /><path d="M14 25 L19 20 L23 23 L30 15" /></symbol>
+    <symbol id="i-pencil" viewBox="0 0 48 48"><path d="M10 38 L12 30 L33 9 L39 15 L18 36 Z M29 13 L35 19 M10 38 L18 36" /></symbol>
+  </svg>
+
+  <!-- side rails of doodle tiles (desktop) -->
+  <div class="rail rail--l" aria-hidden="true"><div class="rail__track"></div></div>
+  <div class="rail rail--r" aria-hidden="true"><div class="rail__track"></div></div>
+
+  <header class="nav">
+    <a class="nav__logo" href="#top">deepti<span>.</span></a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#work">work</a>
+      <a href="#about">about</a>
+      <a href="#contact">say hi</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO: the notebook page -->
+    <section class="hero">
+      <div class="desk-doodles" aria-hidden="true">
+        <svg class="dd dd--1"><use href="#i-mug" /></svg>
+        <svg class="dd dd--2"><use href="#i-mag" /></svg>
+        <svg class="dd dd--3"><use href="#i-db" /></svg>
+        <svg class="dd dd--4"><use href="#i-pencil" /></svg>
+        <svg class="dd dd--5"><use href="#i-scatter" /></svg>
+      </div>
+      <div class="book">
+      <div class="page page--grid hero__page">
+        <div class="hero__text">
+          <p class="hand hero__hi">hi, I'm Deepti</p>
+          <p class="hero__role mono">data analyst · Bangalore</p>
+          <h1 class="hero__head">Data should<br />feel <span class="rotator" aria-live="polite"><span class="hand">obvious.</span><span class="hand">honest.</span><span class="hand">useful.</span></span></h1>
+          <p class="hero__lede">I take messy data, millions of rows of it, and turn it into <mark>decisions people trust.</mark></p>
+          <div class="hero__cta">
+            <a class="btn" href="#work">see my work ↓</a>
+            <a class="btn btn--paper js-resume" href="assets/Deepti_Singh_Kushwaha_Resume.pdf" download>grab my resume</a>
+          </div>
+        </div>
+
+        <figure class="hero__chart" aria-label="A hand-drawn line chart with one unusual point circled in red">
+          <svg viewBox="0 0 420 300" class="doodle">
+            <path class="draw axis" d="M40 20 L40 250 L400 250" />
+            <path class="draw axis" d="M34 32 L40 20 L46 32 M388 244 L400 250 L388 256" />
+            <path class="draw data" d="M48 222 C70 214 82 200 100 205 S130 190 148 184 S176 172 196 176 S226 150 244 154 S262 140 278 60 S296 140 312 128 S344 108 362 100 S384 88 396 82" />
+            <circle class="pop" cx="278" cy="60" r="5" />
+            <path class="draw red" d="M300 52 C300 30 256 28 254 52 C252 76 296 82 304 60 C306 50 296 40 284 40" />
+            <path class="draw red" d="M196 40 C214 32 232 34 248 44 M238 36 L249 45 L236 49" />
+            <text class="hand note" x="190" y="46" text-anchor="end">that's the</text>
+            <text class="hand note" x="190" y="70" text-anchor="end">interesting bit</text>
+            <text class="hand note note--blue" x="60" y="280">most of the job: everything else</text>
+          </svg>
+        </figure>
+
+      </div>
+        <div class="ribbon" aria-hidden="true"></div>
+        <div class="band" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- STAGE: beliefs pinned in the middle, real dashboards float past -->
+    <section class="stage" aria-label="Three things I believe about data">
+      <div class="stage__sticky">
+        <p class="hand stage__label">3 things I believe about data</p>
+        <div class="notes">
+          <div class="note-card note-card--lined"><span>every number<br />needs a test.</span></div>
+          <div class="note-card note-card--grid"><span>show the<br />uncertainty.</span></div>
+          <div class="note-card note-card--kraft"><i class="clip" aria-hidden="true"></i><span>a dashboard nobody opens is just a picture.</span></div>
+        </div>
+        <div class="floaters" aria-hidden="true">
+          <figure class="fl fl--shot" data-x="4" data-y="105" data-s="1.0" data-r="-5"><img src="assets/img/btc-dashboard.gif" alt="" /></figure>
+          <figure class="fl fl--shot" data-x="68" data-y="120" data-s="1.25" data-r="4"><img src="assets/img/hippo-trial-scout.jpg" alt="" /></figure>
+          <figure class="fl fl--doodle" data-x="22" data-y="150" data-s="0.8" data-r="-8"><svg><use href="#i-mug" /></svg></figure>
+          <figure class="fl fl--shot fl--white" data-x="70" data-y="175" data-s="0.9" data-r="-3"><img src="assets/img/aegis-results.svg" alt="" /></figure>
+          <figure class="fl fl--shot" data-x="2" data-y="200" data-s="1.15" data-r="3"><img src="assets/img/zomato-overview.png" alt="" /></figure>
+          <figure class="fl fl--doodle" data-x="74" data-y="235" data-s="0.7" data-r="10"><svg><use href="#i-mag" /></svg></figure>
+          <figure class="fl fl--shot" data-x="66" data-y="265" data-s="1.05" data-r="-4"><img src="assets/img/hippo-overview.jpg" alt="" /></figure>
+          <figure class="fl fl--shot" data-x="6" data-y="290" data-s="0.95" data-r="5"><img src="assets/img/btc-price.gif" alt="" /></figure>
+          <figure class="fl fl--doodle" data-x="26" data-y="330" data-s="1.1" data-r="-6"><svg><use href="#i-db" /></svg></figure>
+          <figure class="fl fl--shot" data-x="70" data-y="345" data-s="1.2" data-r="3"><img src="assets/img/zomato-cohorts.png" alt="" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUMBERS as index cards -->
+    <section class="numbers">
+      <div class="card-index reveal"><b class="count" data-to="6.9" data-dec="1" data-suffix="M">0</b><span>payments ranked by laundering risk</span></div>
+      <div class="card-index reveal"><b class="count" data-to="7.76" data-dec="2" data-suffix="M">0</b><span>minute-level Bitcoin prices crunched</span></div>
+      <div class="card-index reveal"><b class="count" data-to="99" data-suffix="/100">0</b><span>top fraud alerts right, on unseen data</span></div>
+      <div class="card-index reveal"><b class="count" data-to="202">0</b><span>tests keeping the numbers honest</span></div>
+    </section>
+
+    <!-- WORK -->
+    <section class="work" id="work">
+      <h2 class="section-title"><span class="hand">exhibit A–D:</span> things I've built</h2>
+
+      <article class="case">
+        <div class="case__text reveal">
+          <p class="case__tag mono">01 · fintech · anti-money-laundering</p>
+          <h3>Aegis</h3>
+          <p>Laundering is <strong>0.05%</strong> of the 6.9 million payments in the IBM AML dataset, and rule-based alerts mostly cry wolf. I built a pipeline with 30 behaviour and money-cycle features and a LightGBM model that ranks every payment by risk, scores live through FastAPI in about 20 ms, and comes with a Streamlit dashboard for investigators.</p>
+          <ul class="facts">
+            <li><mark>100 / 100</mark> top alerts are real laundering</li>
+            <li><mark>99 / 100</mark> on a dataset it had never seen</li>
+            <li><mark>66.5%</mark> of laundering caught in the top 5,000 alerts (the old prototype: 0.6%)</li>
+          </ul>
+          <p class="stack mono">Polars · LightGBM · FastAPI · Streamlit · 45 tests</p>
+          <p class="links"><a href="https://github.com/goofydynamite/aegis-aml-detection" target="_blank" rel="noopener">read the code ↗</a></p>
+        </div>
+        <figure class="snap snap--r">
+          <div class="snap__paper"><img src="assets/img/aegis-results.svg" alt="Laundering caught in the top 5,000 alerts: old prototype 0.6%, LightGBM on unseen data 66.5%" loading="lazy" /></div>
+          <figcaption class="hand">from 0.6% to 66.5%. same data.</figcaption>
+        </figure>
+      </article>
+
+      <article class="case case--flip">
+        <div class="case__text reveal">
+          <p class="case__tag mono">02 · crypto · market intelligence</p>
+          <h3>Bitcoin Market Intelligence</h3>
+          <p>Fourteen years of minute-level Bitcoin prices, <strong>7.76 million bars</strong>, turned into product, risk and operations decisions for a crypto-investing app. ETL with 47 SQL data-quality checks, a star schema, then causal inference, regime models, GARCH value-at-risk and forecasting. Every recommendation comes with its uncertainty.</p>
+          <p class="stack mono">Python · SQL · statsmodels · Tableau · Chart.js</p>
+          <p class="links">
+            <a href="https://goofydynamite.github.io/btc-market-analysis/" target="_blank" rel="noopener">live dashboard ↗</a>
+            <a href="https://public.tableau.com/app/profile/deepti.singh.kushwaha/viz/bitcoinanalysis_17932796615520/RecurringBuyDecision" target="_blank" rel="noopener">tableau ↗</a>
+            <a href="https://github.com/goofydynamite/btc-market-analysis" target="_blank" rel="noopener">code ↗</a>
+          </p>
+        </div>
+        <figure class="snap snap--l">
+          <div class="snap__paper"><img src="assets/img/btc-dashboard.gif" alt="Tour of the live Bitcoin Market Intelligence dashboard" loading="lazy" /></div>
+          <figcaption class="hand">the live dashboard, clicking through</figcaption>
+        </figure>
+      </article>
+
+      <article class="case">
+        <div class="case__text reveal">
+          <p class="case__tag mono">03 · healthcare · matching</p>
+          <h3>Hippocrates</h3>
+          <p>My first version matched brain-tumour patients to <strong>9,602</strong> clinical trials, and only a quarter were ones they could actually join. So I rebuilt it: registered age limits, EGFR, IDH and MGMT conflicts, a site in the patient's country, and a reason for every match.</p>
+          <ul class="facts">
+            <li><mark>24% → 100%</mark> of matches a patient could join</li>
+            <li><mark>660</mark> valid trials the old rules had missed</li>
+            <li><mark>157</mark> tests</li>
+          </ul>
+          <p class="stack mono">Python · Tableau · pytest · synthetic patients, not medical advice</p>
+          <p class="links">
+            <a href="https://public.tableau.com/app/profile/deepti.singh.kushwaha/viz/HippocratesTrialScout/TrialScout" target="_blank" rel="noopener">tableau ↗</a>
+            <a href="https://github.com/goofydynamite/Hippocrates-Analytics-Clinical-Trial-Matching-Optimization" target="_blank" rel="noopener">code ↗</a>
+          </p>
+        </div>
+        <figure class="snap snap--r">
+          <div class="snap__paper"><img src="assets/img/hippo-trial-scout.jpg" alt="Hippocrates Trial Scout dashboard in Tableau" loading="lazy" /></div>
+          <figcaption class="hand">pick a patient, get ranked trials + why</figcaption>
+        </figure>
+      </article>
+
+      <article class="case case--flip">
+        <div class="case__text reveal">
+          <p class="case__tag mono">04 · food-tech · BI automation</p>
+          <h3>Zomato BI Pipeline</h3>
+          <p>25,000 generated orders flow into PostgreSQL, through one SQL mart, into four Tableau dashboards: overview, restaurants, customer cohorts and order value. Task Scheduler runs it every morning, so nobody has to.</p>
+          <p class="stack mono">Python · PostgreSQL · SQL · Tableau · practice data</p>
+          <p class="links"><a href="https://github.com/goofydynamite/Automated-Business-Intelligence-Dashboard-for-Zomato" target="_blank" rel="noopener">code ↗</a></p>
+        </div>
+        <div class="pile">
+          <figure class="snap snap--a"><div class="snap__paper"><img src="assets/img/zomato-overview.png" alt="Overview dashboard" loading="lazy" /></div></figure>
+          <figure class="snap snap--b"><div class="snap__paper"><img src="assets/img/zomato-cohorts.png" alt="Customer cohorts dashboard" loading="lazy" /></div></figure>
+          <figure class="snap snap--c"><div class="snap__paper"><img src="assets/img/zomato-aov.png" alt="Orders vs average order value dashboard" loading="lazy" /></div></figure>
+        </div>
+      </article>
+    </section>
+
+    <!-- MORE: cutting mat -->
+    <section class="more">
+      <div class="mat">
+        <div class="mat__ruler mat__ruler--top" aria-hidden="true"></div>
+        <div class="mat__ruler mat__ruler--left" aria-hidden="true"></div>
+        <h2 class="hand mat__title">also on my desk</h2>
+        <div class="mat__grid">
+          <a class="chip" href="https://github.com/goofydynamite/AI-Trading-Risk-Dashboard" target="_blank" rel="noopener"><svg><use href="#i-line" /></svg><b>AI Trading &amp; Risk</b><span>price feed, news sentiment, GARCH volatility</span></a>
+          <a class="chip" href="https://github.com/goofydynamite/Cybersecurity-Threat-Intelligence-Dashboard" target="_blank" rel="noopener"><svg><use href="#i-shield" /></svg><b>Threat Intel</b><span>live SOC view, anomaly scoring</span></a>
+          <a class="chip" href="https://github.com/goofydynamite/Ai-Healthcare-Analytics-workspace" target="_blank" rel="noopener"><svg><use href="#i-laptop" /></svg><b>AI Health Workspace</b><span>engagement, CSAT, ROI, GenAI quality</span></a>
+          <a class="chip" href="https://github.com/goofydynamite/Digitial-marketing-a-b-testing" target="_blank" rel="noopener"><svg><use href="#i-bars" /></svg><b>Marketing A/B Test</b><span>which variant converts, with stats</span></a>
+          <a class="chip" href="https://github.com/goofydynamite/ai-job-trends-2025" target="_blank" rel="noopener"><svg><use href="#i-scatter" /></svg><b>AI Job Trends 2025</b><span>what the AI job market looks like</span></a>
+          <a class="chip" href="https://github.com/goofydynamite/netflix_sql" target="_blank" rel="noopener"><svg><use href="#i-table" /></svg><b>Netflix SQL</b><span>15 business questions, in SQL</span></a>
+        </div>
+        <p class="hand mat__note">measure twice, query once.</p>
+      </div>
+    </section>
+
+    <!-- CERTS: stamped -->
+    <section class="certs" id="certs">
+      <h2 class="section-title"><span class="hand">certified</span> & still learning</h2>
+      <div class="certs__row">
+        <a class="ticket reveal" href="https://www.hackerrank.com/certificates/05b17929beea" target="_blank" rel="noopener">
+          <span class="mono">HackerRank</span><b>SQL (Intermediate)</b><span class="mono">Sep 2025 · verify ↗</span><i class="stamp">verified</i>
+        </a>
+        <div class="ticket reveal"><span class="mono">Anaconda</span><b>Python for Data Science</b><span class="mono">Nov 2025 · 5 courses</span><i class="stamp">passed</i></div>
+        <div class="ticket reveal"><span class="mono">OpenEDG Python Institute</span><b>Programming with Python</b><span class="mono">Sep 2025 · 3 courses</span><i class="stamp">passed</i></div>
+        <div class="ticket reveal"><span class="mono">Docker</span><b>Docker Foundations</b><span class="mono">Sep 2025 · 3 courses</span><i class="stamp">passed</i></div>
+        <a class="ticket reveal" href="https://www.linkedin.com/posts/deepti-s-27a1b3158_productmanagement-productroadmapping-productstrategy-share-7387856121950179328-mfj9/" target="_blank" rel="noopener">
+          <span class="mono">Aha!</span><b>Product Management</b><span class="mono">Oct 2025 · view ↗</span><i class="stamp">passed</i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT: hanging polaroid -->
+    <section class="about" id="about">
+      <div class="hang">
+        <span class="hang__string" aria-hidden="true"></span>
+        <figure class="polaroid">
+          <i class="binder" aria-hidden="true"></i>
+          <div class="polaroid__img">
+            <img src="assets/photo.jpg" alt="Deepti Singh Kushwaha" onerror="this.remove()" />
+            <span aria-hidden="true">DK</span>
+          </div>
+          <figcaption class="hand">me, probably debugging a join</figcaption>
+        </figure>
+      </div>
+      <div class="about__text">
+        <h2 class="section-title"><span class="hand">about</span> me</h2>
+        <p class="reveal">I'm a data analyst in Bangalore. My favourite projects start with a messy, oversized dataset and end with something a team can act on: a ranked list, a dashboard, a clear yes or no.</p>
+        <p class="reveal">I care about the boring parts too. Every headline number here has tests behind it, and I say so when the data is synthetic. I work end to end, from SQL and Python pipelines through models to the Tableau dashboard someone actually opens on Monday.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT: checklist card -->
+    <section class="contact" id="contact">
+      <div class="letter">
+        <div class="letter__head">
+          <p class="hand letter__to">dear hiring manager,</p>
+          <h2 class="letter__big">let's talk data.</h2>
+        </div>
+        <div class="letter__left">
+          <h3 class="mono letter__sub">what I'm looking for</h3>
+          <ul class="checks">
+            <li><svg viewBox="0 0 28 28"><rect x="2" y="2" width="24" height="24" rx="4" /><path class="tick" d="M7 15 L12 20 L22 7" /></svg>a data analyst or BI role</li>
+            <li><svg viewBox="0 0 28 28"><rect x="2" y="2" width="24" height="24" rx="4" /><path class="tick" d="M7 15 L12 20 L22 7" /></svg>big, messy, meaningful data</li>
+            <li><svg viewBox="0 0 28 28"><rect x="2" y="2" width="24" height="24" rx="4" /><path class="tick" d="M7 15 L12 20 L22 7" /></svg>a team that asks good questions</li>
+          </ul>
+          <a class="btn letter__btn" href="mailto:deepti.sngh.kushwaha@gmail.com">let's chat!</a>
+        </div>
+        <div class="letter__right">
+          <h3 class="mono letter__sub">reach me</h3>
+          <a class="letter__mail" href="mailto:deepti.sngh.kushwaha@gmail.com">deepti.sngh.kushwaha<wbr>@gmail.com</a>
+          <p class="links letter__links">
+            <a href="https://www.linkedin.com/in/deepti-s-27a1b3158" target="_blank" rel="noopener">linkedin ↗</a>
+            <a href="https://github.com/goofydynamite" target="_blank" rel="noopener">github ↗</a>
+            <a href="https://public.tableau.com/app/profile/deepti.singh.kushwaha" target="_blank" rel="noopener">tableau public ↗</a>
+            <a class="js-resume" href="assets/Deepti_Singh_Kushwaha_Resume.pdf" download>resume ↓</a>
+          </p>
+          <svg class="letter__doodle"><use href="#i-laptop" /></svg>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="ticker hand" aria-hidden="true"><div class="ticker__track"><span>messy data in ✦ decisions out ✦ every number tested ✦ made in Bangalore ✦ show the uncertainty ✦&nbsp;</span><span>messy data in ✦ decisions out ✦ every number tested ✦ made in Bangalore ✦ show the uncertainty ✦&nbsp;</span></div></div>
+    <p class="hand footer__sig">deepti<span>.</span></p>
+    <p class="mono footer__small">drawn, coded and fact-checked by hand · 2026</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

@@ -140,7 +140,7 @@ mark.on { background-size: 100% 72%; }
 .dd--4 { left: -56px; bottom: 12%; width: 80px; height: 80px; transform: rotate(18deg); }
 .dd--5 { left: 46%; bottom: 0; width: 72px; height: 72px; transform: rotate(-6deg); }
 @media (max-width: 1400px) { .dd--1, .dd--2, .dd--3, .dd--4 { opacity: .5; } }
-@media (max-width: 960px) { .desk-doodles { display: none; } .band { right: 34px; } .book { padding: 14px; border-radius: 26px; } }
+@media (max-width: 960px) { .desk-doodles { display: none; } .band { right: 2px; width: 10px; } .book { padding: 14px; border-radius: 26px; } }
 
 /* ---------- buttons & links ---------- */
 .btn {
